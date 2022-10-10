@@ -26,18 +26,20 @@ textarea {
 .editor-header {
   border: 1px solid blue;
 }
+#editor {
+  width: max-content;
+}
 
 .container--previewer {
-  max-width: max-content;
+  max-width: fit-content;
   border: 1px solid green;
   margin: 0 auto;
   padding: 20px;
 }
 .previewer-header {
   border: 1px solid blue;
-  width: 350px;
 }
 .previewer-body {
   border: 1px solid grey;
-  width: 350px;
+  width: fit-content;
 }

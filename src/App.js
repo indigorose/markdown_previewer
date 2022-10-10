@@ -1,42 +1,56 @@
 import './App.css';
-import React, { useState } from 'react';
+import { Component } from 'react';
 
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 
-function App() {
-  const [text, setText] = useState('');
-  const handleMessageChange = (e) => {
-    setText(e.target.value);
-    console.log(e.target.value);
-  };
-  return (
-    <div className="App">
-      <div className="container">
-        <h1>Markdown Previewer</h1>
-        <div className="container--editor">
-          <div className="editor-header">
-            <h2>(icon)Editor</h2>
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      markdown: placeholder,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handlechange(e) {
+    this.setState({
+      markdown: e.target.value,
+    });
+  }
+  render() {
+    // const [text, setText] = useState(placeholder);
+    // const handleMessageChange = (e) => {
+    //   setText(e.target.value);
+    //   console.log(e.target.value);
+    // };
+    return (
+      <div className="App">
+        <div className="container">
+          <h1>Markdown Previewer</h1>
+          <div className="container--editor">
+            <div className="editor-header">
+              <h2>(icon)Editor</h2>
+            </div>
+            <textarea
+              id="editor"
+              cols="30"
+              rows="10"
+              value={this.state.markdown}
+              onChange={this.props.onChange}
+            ></textarea>
           </div>
-          <textarea
-            id="editor"
-            cols="30"
-            rows="10"
-            value={text}
-            onChange={handleMessageChange}
-          ></textarea>
+          <div className="container--previewer">
+            <div className="previewer-header">
+              <h2>(icon)Previewer</h2>
+            </div>
+            <div id="preview" className="previewer-body">
+              {this.state.markdown}
+            </div>
+          </div>
+          <p>by Karen Robertson</p>
         </div>
-        <div className="container--previewer">
-          <div className="previewer-header">
-            <h2>(icon)Previewer</h2>
-          </div>
-          <div id="preview" className="previewer-body">
-            <ReactMarkdown>{placeholder}</ReactMarkdown>
-          </div>
-        </div>
-        <p>by Karen Robertson</p>
       </div>
-    </div>
-  );
+    );
+  }
 }
 const placeholder = `# Welcome to my React Markdown Previewer!
 
