@@ -4,18 +4,18 @@ import { Component } from 'react';
 // import ReactMarkdown from 'react-markdown';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      markdown: placeholder,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handlechange(e) {
-    this.setState({
-      markdown: e.target.value,
-    });
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.state = {
+  //   //   markdown: placeholder,
+  //   // };
+  //   // this.handleChange = this.handleChange.bind(this);
+  // }
+  // handlechange(e) {
+  //   this.setState({
+  //     markdown: e.target.value,
+  //   });
+  // }
   render() {
     // const [text, setText] = useState(placeholder);
     // const handleMessageChange = (e) => {
@@ -23,6 +23,7 @@ class App extends Component {
     //   console.log(e.target.value);
     // };
     return (
+      // This layout is the parent, the textarea is the first child and previewer is the second and nest in the parent app.
       <div className="App">
         <div className="container">
           <h1>Markdown Previewer</h1>
@@ -34,8 +35,8 @@ class App extends Component {
               id="editor"
               cols="30"
               rows="10"
-              value={this.state.markdown}
-              onChange={this.props.onChange}
+              value={placeholder}
+              // onChange={this.handleChange}
             ></textarea>
           </div>
           <div className="container--previewer">
@@ -43,7 +44,7 @@ class App extends Component {
               <h2>(icon)Previewer</h2>
             </div>
             <div id="preview" className="previewer-body">
-              {this.state.markdown}
+              {/* {this.state.markdown} */}
             </div>
           </div>
           <p>by Karen Robertson</p>
@@ -97,3 +98,63 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `;
 export default App;
+// ReactDOM.render(<App />, document.getElementbyId('app')) look at this type of rendering or call it in the index js file.
+
+// Testing code for later
+// class MyApp extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       inputValue: ''
+//     }
+//     this.handleChange = this.handleChange.bind(this);
+//   }
+//   handleChange(event) {
+//     this.setState({
+//       inputValue: event.target.value
+//     });
+//   }
+//   render() {
+//     return (
+//        <div>
+//         { /* Change code below this line */ }
+// <GetInput
+// input={this.state.inputValue}
+// handleChange={this.handleChange}/>
+// <RenderInput
+// input={this.state.inputValue}/>
+//         { /* Change code above this line */ }
+//        </div>
+//     );
+//   }
+// };
+
+// class GetInput extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h3>Get Input:</h3>
+//         <input
+//           value={this.props.input}
+//           onChange={this.props.handleChange}/>
+//       </div>
+//     );
+//   }
+// };
+
+// class RenderInput extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h3>Input Render:</h3>
+//         <p>{this.props.input}</p>
+//       </div>
+//     );
+//   }
+// };
