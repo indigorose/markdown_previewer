@@ -1,27 +1,21 @@
 import './App.css';
-import { Component } from 'react';
-
-// import ReactMarkdown from 'react-markdown';
+import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   // this.state = {
-  //   //   markdown: placeholder,
-  //   // };
-  //   // this.handleChange = this.handleChange.bind(this);
-  // }
-  // handlechange(e) {
-  //   this.setState({
-  //     markdown: e.target.value,
-  //   });
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: placeholder,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      inputValue: e.target.value,
+    });
+  }
   render() {
-    // const [text, setText] = useState(placeholder);
-    // const handleMessageChange = (e) => {
-    //   setText(e.target.value);
-    //   console.log(e.target.value);
-    // };
     return (
       // This layout is the parent, the textarea is the first child and previewer is the second and nest in the parent app.
       <div className="App">
@@ -31,20 +25,17 @@ class App extends Component {
             <div className="editor-header">
               <h2>(icon)Editor</h2>
             </div>
-            <textarea
-              id="editor"
-              cols="30"
-              rows="10"
-              value={placeholder}
-              // onChange={this.handleChange}
-            ></textarea>
+            <TextInput
+              input={this.state.inputValue}
+              handleChange={this.handleChange}
+            />
           </div>
           <div className="container--previewer">
             <div className="previewer-header">
               <h2>(icon)Previewer</h2>
             </div>
             <div id="preview" className="previewer-body">
-              {/* {this.state.markdown} */}
+              <MarkDownText input={this.state.inputValue} />
             </div>
           </div>
           <p>by Karen Robertson</p>
@@ -53,6 +44,30 @@ class App extends Component {
     );
   }
 }
+
+class TextInput extends Component {
+  render() {
+    const textInput = this.props.input;
+    const textChange = this.props.handleChange;
+    return (
+      <textarea
+        id="editor"
+        cols="130"
+        rows="30"
+        value={textInput}
+        onChange={textChange}
+      />
+    );
+  }
+}
+
+class MarkDownText extends Component {
+  render() {
+    const textMark = this.props.input;
+    return <ReactMarkdown>{textMark}</ReactMarkdown>;
+  }
+}
+
 const placeholder = `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
@@ -98,63 +113,3 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `;
 export default App;
-// ReactDOM.render(<App />, document.getElementbyId('app')) look at this type of rendering or call it in the index js file.
-
-// Testing code for later
-// class MyApp extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       inputValue: ''
-//     }
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-//   handleChange(event) {
-//     this.setState({
-//       inputValue: event.target.value
-//     });
-//   }
-//   render() {
-//     return (
-//        <div>
-//         { /* Change code below this line */ }
-// <GetInput
-// input={this.state.inputValue}
-// handleChange={this.handleChange}/>
-// <RenderInput
-// input={this.state.inputValue}/>
-//         { /* Change code above this line */ }
-//        </div>
-//     );
-//   }
-// };
-
-// class GetInput extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h3>Get Input:</h3>
-//         <input
-//           value={this.props.input}
-//           onChange={this.props.handleChange}/>
-//       </div>
-//     );
-//   }
-// };
-
-// class RenderInput extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h3>Input Render:</h3>
-//         <p>{this.props.input}</p>
-//       </div>
-//     );
-//   }
-// };
