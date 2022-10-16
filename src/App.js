@@ -1,7 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +20,16 @@ class App extends Component {
     return (
       // This layout is the parent, the textarea is the first child and previewer is the second and nest in the parent app.
       <div className="App">
-        <div className="container">
+        <header>
           <h1>Markdown Previewer</h1>
+        </header>
+        <div className="container">
           <div className="container--editor">
             <div className="editor-header">
-              <h2>(icon)Editor</h2>
+              <h2>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </h2>
+              <h2>Editor</h2>
             </div>
             <TextInput
               input={this.state.inputValue}
@@ -32,13 +38,21 @@ class App extends Component {
           </div>
           <div className="container--previewer">
             <div className="previewer-header">
-              <h2>(icon)Previewer</h2>
+              <h2>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </h2>
+              <h2>Previewer</h2>
             </div>
             <div id="preview" className="previewer-body">
-              <MarkDownText input={this.state.inputValue} />
+              <MarkDownText
+                classname="body-text"
+                input={this.state.inputValue}
+              />
             </div>
           </div>
-          <p>by Karen Robertson</p>
+          <div className="footer">
+            <p>by Karen Robertson</p>
+          </div>
         </div>
       </div>
     );
@@ -52,7 +66,7 @@ class TextInput extends Component {
     return (
       <textarea
         id="editor"
-        cols="130"
+        cols="90"
         rows="30"
         value={textInput}
         onChange={textChange}

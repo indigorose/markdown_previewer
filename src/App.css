@@ -1,13 +1,23 @@
 body {
-  background-color: aliceblue;
+  background-color: rgb(249, 249, 249);
 }
 
 textarea {
   outline: none;
   width: 350px;
-  background-color: beige;
+  background-color: rgb(249, 249, 249);
 }
-
+img {
+  width: fit-content;
+  height: 70px;
+}
+h2 {
+  padding-right: 10px;
+}
+h2:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(250, 244, 183);
+}
 .App {
   height: 100vh;
 }
@@ -18,28 +28,47 @@ textarea {
   padding: 10px;
 }
 .container--editor {
-  border: 1px solid red;
+  border: 1px solid rgb(0, 0, 0);
   max-width: max-content;
   margin: 0 auto;
   padding: 20px;
+  background-color: rgb(205, 240, 234);
 }
 .editor-header {
-  border: 1px solid blue;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(246, 198, 234);
+  padding-left: 20px;
+  display: flex;
+  flex: flex-start;
 }
 #editor {
   width: max-content;
 }
 
 .container--previewer {
-  max-width: fit-content;
-  border: 1px solid green;
+  max-width: 740px;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
   margin: 0 auto;
   padding: 20px;
+  background-color: rgb(205, 240, 234);
 }
 .previewer-header {
-  border: 1px solid blue;
+  border: 1px solid rgb(0, 0, 0);
+  padding-left: 20px;
+  display: flex;
+  flex: flex-start;
+  background-color: rgb(246, 198, 234);
 }
 .previewer-body {
-  border: 1px solid grey;
+  border: 1px solid rgb(0, 0, 0);
+  width: 750px;
+  display: inline-block;
+  background-color: rgb(249, 249, 249);
+}
+.body-text {
   width: fit-content;
+}
+.footer {
+  margin: auto;
 }
