@@ -1,75 +1,77 @@
 body {
-  background-color: rgb(249, 249, 249);
+	background-color: rgb(249, 249, 249);
 }
 
 textarea {
-  outline: none;
-  width: 350px;
-  background-color: rgb(249, 249, 249);
+	outline: none;
+	width: 350px;
+	background-color: rgb(249, 249, 249);
 }
 img {
-  width: fit-content;
-  height: 70px;
+	width: fit-content;
+	height: 70px;
 }
 h2 {
-  padding-right: 10px;
+	padding-right: 1em;
 }
 h2:hover {
-  text-decoration: underline;
-  text-decoration-color: rgb(250, 244, 183);
+	text-decoration: underline;
+	text-decoration-color: rgb(250, 244, 183);
 }
 .App {
-  height: 100vh;
+	height: 100vh;
 }
 .container {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 10px;
-  padding: 10px;
+	display: grid;
+	grid-template-columns: auto;
+	gap: 1em;
+	padding: 0.8em;
 }
 .container--editor {
-  border: 1px solid rgb(0, 0, 0);
-  max-width: max-content;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgb(205, 240, 234);
+	border: 1px solid rgb(0, 0, 0);
+	max-width: max-content;
+	margin: 0 auto;
+	padding: 1em;
+	background-color: rgb(205, 240, 234);
 }
 .editor-header {
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(246, 198, 234);
-  padding-left: 20px;
-  display: flex;
-  flex: flex-start;
+	border: 1px solid rgb(0, 0, 0);
+	background-color: rgb(246, 198, 234);
+	padding-left: 1em;
+	display: flex;
+	flex: flex-start;
 }
 #editor {
-  width: max-content;
+	width: max-content;
+	padding-left: 0.8em;
 }
 
 .container--previewer {
-  max-width: 740px;
-  display: inline-block;
-  border: 1px solid rgb(0, 0, 0);
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgb(205, 240, 234);
+	max-width: 740px;
+	display: inline-block;
+	border: 1px solid rgb(0, 0, 0);
+	margin: 0 auto;
+	padding: 1em;
+	background-color: rgb(205, 240, 234);
 }
 .previewer-header {
-  border: 1px solid rgb(0, 0, 0);
-  padding-left: 20px;
-  display: flex;
-  flex: flex-start;
-  width: 720px;
-  background-color: rgb(246, 198, 234);
+	border: 1px solid rgb(0, 0, 0);
+	padding-left: 1em;
+	display: flex;
+	flex: flex-start;
+	width: 720px;
+	background-color: rgb(246, 198, 234);
 }
 .previewer-body {
-  border: 1px solid rgb(0, 0, 0);
-  width: 740px;
-  display: inline-block;
-  background-color: rgb(249, 249, 249);
+	border: 1px solid rgb(0, 0, 0);
+	padding-left: 0.8em;
+	max-width: 740px;
+	display: inline-block;
+	background-color: rgb(249, 249, 249);
 }
 .body-text {
-  width: fit-content;
+	width: fit-content;
 }
 .footer {
-  margin: auto;
+	margin: auto;
 }
